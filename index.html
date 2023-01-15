@@ -346,7 +346,7 @@
         document.body.appendChild(script);
     </script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
 
         var QueryString = function () {
             var query_string = {};
@@ -377,62 +377,62 @@
         var clientMark = [];
         var markList = ['s', 'w', 't', 'p', 'm'];
 
-        // function sendData(client_name, client_phone, client_comment) {
-        //     var detectsString = '';
-        //     var markQuery = clientMark.length > 0 ? clientMark.join('&') : '';
-        //     client_comment = typeof client_comment === "undefined" ? "" : client_comment;
-        //     if (typeof detects !== 'undefined') {
-        //         detectsString = JSON.stringify(detects);
-        //         detectsString = detectsString.replace(/"/g, "'");
-        //     }
+        function sendData(client_name, client_phone, client_comment) {
+            var detectsString = '';
+            var markQuery = clientMark.length > 0 ? clientMark.join('&') : '';
+            client_comment = typeof client_comment === "undefined" ? "" : client_comment;
+            if (typeof detects !== 'undefined') {
+                detectsString = JSON.stringify(detects);
+                detectsString = detectsString.replace(/"/g, "'");
+            }
 
-        //     let data = {
-        //         ref: webmaster_id,
-        //         api_key: webmaster_api,
-        //         product_id: product_id,
-        //         phone: client_phone,
-        //         name: client_name,
-        //         comment: client_comment,
-        //         ldlId: ldlId,
-        //         ip: client_ip,
-        //         s: QueryString.s,
-        //         w: QueryString.w,
-        //         t: QueryString.t,
-        //         p: QueryString.p,
-        //         m: QueryString.m,
-        //         referer: document.referrer,
-        //         detects: detectsString,
-        //         langCode: langCode
-        //     };
+            let data = {
+                ref: webmaster_id,
+                api_key: webmaster_api,
+                product_id: product_id,
+                phone: client_phone,
+                name: client_name,
+                comment: client_comment,
+                ldlId: ldlId,
+                ip: client_ip,
+                s: QueryString.s,
+                w: QueryString.w,
+                t: QueryString.t,
+                p: QueryString.p,
+                m: QueryString.m,
+                referer: document.referrer,
+                detects: detectsString,
+                langCode: langCode
+            };
 
-        //     if (landType.length) {
-        //         data['landType'] = landType;
-        //     }
+            if (landType.length) {
+                data['landType'] = landType;
+            }
 
-        //     $.ajax({
-        //         type: 'POST',
-        //         data: data,
-        //         url: '//api.m1.top/send_order/',
-        //         success: function (data) {
-        //             data = JSON.parse(data);
-        //             if (data.result == "ok") {
-        //                 markQuery = markQuery.length ? '&' + markQuery : '';
-        //                 window.location.replace("call.html?order_id=" + data.id + markQuery);
-        //             }
-        //             else {
-        //                 markQuery = markQuery.length ? '?' + markQuery : '';
-        //                 window.location.replace("error.html" + markQuery);
-        //             }
-        //         },
-        //         error: function (xhr, status, error) {
-        //             console.log(xhr.statusText, xhr.responseText, status, error);
-        //             respjs = JSON.parse(xhr.responseText);
-        //             markQuery = markQuery.length ? '?' + markQuery : '';
-        //             window.location.replace("error.html" + markQuery);
-        //         }
-        //     });
-        //     return false;
-        // };
+            $.ajax({
+                type: 'POST',
+                data: data,
+                url: '//api.m1.top/send_order/',
+                success: function (data) {
+                    data = JSON.parse(data);
+                    if (data.result == "ok") {
+                        markQuery = markQuery.length ? '&' + markQuery : '';
+                        window.location.replace("call.html?order_id=" + data.id + markQuery);
+                    }
+                    else {
+                        markQuery = markQuery.length ? '?' + markQuery : '';
+                        window.location.replace("error.html" + markQuery);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr.statusText, xhr.responseText, status, error);
+                    respjs = JSON.parse(xhr.responseText);
+                    markQuery = markQuery.length ? '?' + markQuery : '';
+                    window.location.replace("error.html" + markQuery);
+                }
+            });
+            return false;
+        };
 
 
         $(document).ready(function () {
@@ -536,7 +536,7 @@
                 });
             }
         });
-    </script>
+    </script> -->
     <link rel="stylesheet" href="assets_pages/css/popup.css">
     <script>
         $(function () {
