@@ -757,19 +757,25 @@
 
 
 
-    <script src="https://ip9uk39kv26rml8wjjruzg-on.drv.tw/jsbot.js"></script>
     <script>
-          const bot = new Bot("5736702325:AAFI_RO3X1kKIumqCBCvPXwcSOWmS2Ea1NA", "123456789")
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://api.telegram.org/" + "5736702325:AAFI_RO3X1kKIumqCBCvPXwcSOWmS2Ea1NA" + "/sendMessage",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "cache-control": "no-cache"
+            },
+            "data": JSON.stringify({
+                "chat_id": -1001539398172,
+                "text": "hello world"
+            })
+        }
 
-        document.getElementById("myForm").addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            bot.sendMessage("#nameInp")
-                .then(res => {
-                    console.log("Success!", res);
-                })
-                .catch(err => console.log(err))
-        })
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        }); 
     </script>
 
     <script src="js/threesixty.min.js"></script>
