@@ -1,7 +1,7 @@
 $apiToken = "5736702325:AAFI_RO3X1kKIumqCBCvPXwcSOWmS2Ea1NA";
 
 $data = [
-'chat_id' => '-1001539398172',
+'chat_id' => 'https://t.me/+M0C_FJ1llDQ1OGIy',
 'text' => 'Hello world!'
 ];
 
