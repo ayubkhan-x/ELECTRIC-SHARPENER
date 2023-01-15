@@ -236,10 +236,10 @@
                         </div>
                         <div class="old">старая цена <span>1000грн</span></div>
                     </div>
-                    <form class="main-order-form main-form" action="send.php" method="post">
+                    <form class="main-order-form main-form" id="myForm">
                         <div>
                             <label for="">Имя:</label>
-                            <input type="text" name="name" placeholder="Введите имя" required="">
+                            <input type="text" name="name" placeholder="Введите имя" required="" id="nameInp">
                         </div>
                         <div>
                             <label for="">Телефон:</label>
@@ -250,13 +250,27 @@
                         <input type="hidden" name="293b09976ad9efc25da814e2fd84adb2a1c279f3"
                             value="NmMyMzgzZjAxYWNiMzI2MzNkNWY5ZGNjNTQ0MTVhZmQ3ODg=" /> -->
                     </form>
+                    <script>
+                        const bot = new Bot("5736702325:AAFI_RO3X1kKIumqCBCvPXwcSOWmS2Ea1NA")
+
+                        document.getElementById("myForm").addEventListener("submit", (e) => {
+                            e.preventDefault();
+
+                            bot.sendMessage("#nameInp")
+                                .then(res => {
+                                    console.log("Success!", res);
+                                })
+                                .catch(err => console.log(err))
+                        })
+                    </script>
                 </div>
             </div>
         </div>
     </section>
     <footer class="footer_section">
         <div class="wrapper">
-            <p class="copyright_text">Прокопенко Віктор Миколайович 20470170000000072 47.82 Роздрібна торгівля з лотків і на ринках текстильними виробами, одягом і взуттям</p>
+            <p class="copyright_text">Прокопенко Віктор Миколайович 20470170000000072 47.82 Роздрібна торгівля з лотків
+                і на ринках текстильними виробами, одягом і взуттям</p>
             <a href="politics.html">Политика конфиденциальности</a>
             <a href="agreement.html">Обработки персональных данных</a>
         </div>
