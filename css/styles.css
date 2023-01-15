@@ -263,7 +263,10 @@ section{
 .price .old>span{
 	text-decoration: #fb3333 2px line-through;
 }
-
+.prod_img {
+	width: 649px;
+	height: 949px;
+}
 .offer_section .prod_img{
 	position: absolute;
 	top: -70px;
@@ -1211,4 +1214,9 @@ section{
 	.threesixty{
 		min-height: 230px;
 	}
+}
+.copyright_text {
+	max-width: 533px;
+	text-align: center;
+	margin: 0 auto 15px;
 }
